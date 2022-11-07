@@ -145,7 +145,7 @@ def body_mass_index(weight, height):
     # Stay within the function. Only use the parameters as input. The function should return your answer.
     weight_metric = weight*0.454
 
-    height_metric = (height[0]*12 + height[1]*12) * 0.0245
+    height_metric = (height[0]*12 + height[1]*12) * 0.0254
 
     body_mass_index = weight_metric / (height_metric**2)
 
