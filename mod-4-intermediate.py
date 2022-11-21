@@ -38,7 +38,7 @@ def shift_letter(letter, shift):
     # Replace `pass` with your code. 
     # Stay within the function. Only use the parameters as input. The function should return your answer.
      
-    shift_letter = ord(letter) + int(shift)%26
+    shift_letter = (ord(letter) + int(shift) - 65) %26 + 65
         
     if ord(letter) == 32:
          return(" ");
@@ -75,7 +75,7 @@ def caesar_cipher(message, shift):
             answer = answer + char
         
         elif ord(char) <= 90 and ord(char) >= 65:
-            answer += chr(ord(char) + int(shift)%26)
+            answer += chr(((ord(char) + int(shift)-65) %26 + 65))
              
         else:
              answer = "error"
