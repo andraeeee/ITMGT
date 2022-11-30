@@ -87,8 +87,8 @@ def tic_tac_toe(board):
         if len(set(row)) == 1 and row[0] != "":
             return row[0]
 
-    for rows in zip(*board):    
-        if len(set(row)) == 1 and rows[0] != "":
+    for row in zip(*board):    
+        if len(set(row)) == 1 and row[0] != "":
             return row[0]
 
     if len(set([board[i][i] for i in range(len(board))])) == 1 and board[0][0] != "":
