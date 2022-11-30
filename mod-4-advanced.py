@@ -133,6 +133,7 @@ def eta(first_stop, second_stop, route_map):
     # Stay within the function. Only use the parameters as input. The function should return your answer.
     minutes_list = list(route_map.values())
     minutes = []
+    total_travel = []
     
     for m in range(len(minutes_list)):
         minutes = minutes + list(minutes_list[m].values())
@@ -147,13 +148,14 @@ def eta(first_stop, second_stop, route_map):
         
         if first_stop == second_stop:
             return int(sum(minutes))
-        
-        elif first_stop != second_stop:
-            if minutes[final_first] == minutes[final_second]:
-                   return int(minutes[final_first])
-            elif second_stop > first_stop:
-                total_travel = sum(minutes[final_first:final_second + 1])
-                return int(total_travel)
-            else:
-                total_travel = sum(minutes[final_first:] + minutes[:final_second + 1])
-                return int(total_travel)
+            
+        elif final_first == final_second:
+            return int(minutes[final_first])
+                
+        elif final_second > final_first:
+            total_travel = sum(minutes[final_first:final_second + 1])
+            return int(total_travel)
+
+        else:
+            total_travel = sum(minutes[final_first:] + minutes[:final_second +1])
+            return int(total_travel)
